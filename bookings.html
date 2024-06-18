@@ -7,23 +7,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         .header .tabs {
@@ -32,6 +35,23 @@
 
         .header .tabs div {
             margin-right: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .header .tabs div:hover {
+            color: #007bff;
+        }
+
+        .price-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .price-button span {
+            font-size: 18px;
+            color: #007bff;
+            margin-right: 10px;
         }
 
         .filters {
@@ -41,8 +61,20 @@
             margin: 20px 0;
         }
 
-        .filters button, .filters span {
+        .filters button {
             margin-right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .filters button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
 
         .room-offer {
@@ -50,6 +82,14 @@
             border: 1px solid #ddd;
             margin: 10px 0;
             padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .room-offer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .room-details, .benefits, .price-book {
@@ -61,6 +101,7 @@
             max-width: 100%;
             height: auto;
             display: block;
+            border-radius: 8px;
         }
 
         .room-info {
@@ -89,10 +130,31 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .book-now:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .book-now:focus {
+            outline: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .room-offer {
+            animation: fadeIn 0.6s ease-in-out;
         }
     </style>
 </head>
@@ -140,12 +202,12 @@
                     <li>Parking, Free WiFi</li>
                 </ul>
                 <p>Other rewards & discounts</p>
-                <button>Domestic Deals</button>
+                <button class="book-now">Domestic Deals</button>
             </div>
             <div class="price-book">
                 <p class="price">Rs. 2,880</p>
                 <button class="book-now">Book now</button>
-                <button>Add to cart</button>
+                <button class="book-now">Add to cart</button>
                 <p>No cancellation fee</p>
                 <p>Limited availability</p>
             </div>
@@ -169,20 +231,22 @@
                     <li>Parking, Free WiFi</li>
                 </ul>
                 <p>Other rewards & discounts</p>
-                <button>Domestic Deals</button>
+                <button class="book-now">Domestic Deals</button>
             </div>
             <div class="price-book">
                 <p class="price">Rs. 2,880</p>
                 <button class="book-now">Book now</button>
-                <button>Add to cart</button>
+                <button class="book-now">Add to cart</button>
                 <p>No cancellation fee</p>
                 <p>Limited availability</p>
             </div>
         </div>
     </div>
     <script>
-        document.querySelector('.book-now').addEventListener('click', function() {
-            alert('Booking now!');
+        document.querySelectorAll('.book-now').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Booking now!');
+            });
         });
     </script>
 </body>
