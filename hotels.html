@@ -18,19 +18,31 @@
             flex-direction: column;
             align-items: center;
             margin: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .search-box {
             background: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
             width: 100%;
-            max-width: 1000px; /* Adjust maximum width as needed */
+            max-width: 1000px;
             margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: slideInLeft 0.5s ease-in-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
 
         .search-content {
@@ -44,27 +56,27 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            margin-bottom: 20px;
+            max-width: 1000px;
+            animation: slideInRight 0.5s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
 
         .filters, .hotels {
             background: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
             flex: 1;
-        }
-
-        .filters {
-            margin-right: 10px;
-        }
-
-        .hotels {
-            margin-left: 10px;
+            margin: 10px;
         }
 
         h2, h3 {
             margin-top: 0;
+            color: #007bff;
         }
 
         #search-button {
@@ -74,18 +86,26 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         #search-button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
 
         .hotel {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Center align vertically */
+            align-items: center;
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hotel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
 
         .hotel:last-child {
@@ -93,7 +113,7 @@
         }
 
         .item-info {
-            flex: 1; /* Occupy remaining space */
+            flex: 1;
         }
 
         .item-info p {
@@ -101,10 +121,17 @@
         }
 
         .item-logo img {
-            width: 200px; /* Adjust size of the logo as needed */
+            width: 150px;
             height: auto;
-            margin-right: 10px; /* Add some space between text and logo */
-            vertical-align: middle; /* Align with text vertically */
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .item-logo img:hover {
+            transform: scale(1.05);
         }
         
         .book-button {
@@ -114,10 +141,12 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .book-button:hover {
             background-color: #218838;
+            transform: scale(1.05);
         }
         
         label {
@@ -243,7 +272,6 @@
 
     <script>
         document.getElementById('search-button').addEventListener('click', function() {
-            // Add your search logic here
             alert('Search button clicked!');
         });
     </script>
