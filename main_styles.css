@@ -114,11 +114,11 @@ a, a:hover, a:visited, a:active, a:link
 p a:active
 {
 	position: relative;
-	color: #fefefe;
+	color: #2e268a;
 }
 p a:hover
 {
-	color: #FFFFFF;
+	color: #5c31c9;
 	background: #385dff;
 }
 p a:hover::after
@@ -385,7 +385,7 @@ section
 }
 .social_list_item a:hover
 {
-	color: #FFFFFF;
+	color: #3c2cb7;
 }
 .user_box_link
 {
@@ -509,7 +509,7 @@ section
 	bottom: -11px;
 	width: calc(100% + 2px);
 	height: 2px;
-	background: linear-gradient(to right, #ffffff, #4f90ff);
+	background: linear-gradient(to right, #3446ae, #4f90ff);
 	content: '';
 	opacity: 0;
 	-webkit-transition: all 200ms ease;
@@ -629,7 +629,7 @@ section
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(to right, #f1f0ee, #4fb0ff);
+	background: linear-gradient(to right, #1f62ba, #4fb0ff);
 	z-index: 100;
 	opacity: 0;
 	visibility: hidden;
@@ -738,7 +738,7 @@ section
 .menu_close_container:hover .menu_close,
 .menu_close_container:hover .menu_close::after
 {
-	background: #ffffff;
+	background: #225c9e;
 }
 
 /*********************************
@@ -899,7 +899,7 @@ section
 }
 .home_slider_custom_dot:hover.active div
 {
-	border-color: #fffcf8;
+	border-color: #285ca4;
 }
 .home_slider_custom_dot.active
 {
@@ -942,7 +942,7 @@ section
 {
 	width: 100%;
 	height: 192px;
-	background: linear-gradient(to right, #ffffff, #4faaff);
+	background: linear-gradient(to right, #0f5396, #4faaff);
 	z-index: 10;
 }
 .search_tabs_container
@@ -1008,7 +1008,7 @@ section
 .search_tab:hover
 {
 	background: #1ba4fa;
-	color: #FFFFFF;
+	color: #8652ef;
 }
 .search_tab:hover img
 {
@@ -1735,7 +1735,7 @@ section
 }
 .trending_title a:hover
 {
-	color: #ffffff;
+	color: #3631ca;
 }
 .trending_price
 {
@@ -2159,5 +2159,5 @@ section
 }
 .footer_nav_item a:hover
 {
-	color: #FFFFFF;
+	color: #050766;
 }
