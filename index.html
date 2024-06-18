@@ -513,7 +513,15 @@
         </div>
     </div>
 </div>
-
+<script>
+        $(document).ready(function() {
+            $('.search_button').on('click', function() {
+                var type = $(this).data('type');
+                var url = type === 'hotels' ? 'hotels.html' : 'tryy.html';
+                window.location.href = url;
+            });
+        });
+    </script>
 
 
 	<!-- Intro -->
@@ -715,15 +723,7 @@
 		</div>
 					
 	</div>
-	<script>
-        $(document).ready(function() {
-            $('.search_button').on('click', function() {
-                var type = $(this).data('type');
-                var url = type === 'hotels' ? 'hotels.html' : 'tryy.html';
-                window.location.href = url;
-            });
-        });
-    </script>
+	
 
 	<!-- Offers -->
 
