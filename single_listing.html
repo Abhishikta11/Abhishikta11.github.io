@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Listings</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/single_listing_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/single_listing_responsive.css">
+    <style>
+        /* Custom CSS for demo purpose */
+        .single_listing {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        .hotel_description_text {
+            margin-bottom: 20px;
+        }
+        .hotel_amenity {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .hotel_amenity_icon img {
+            max-width: 40px;
+        }
+		.image
+		{
+			width:50%;
+		}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="super_container">
+    
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="top_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-row">
+                        <div class="phone">+45 345 3324 56789</div>
+                        <div class="social">
+                            <ul class="social_list">
+                                <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                                <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="user_box ml-auto">
+                            <div class="user_box_login user_box_link"><a href="#">login</a></div>
+                            <div class="user_box_register user_box_link"><a href="#">register</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+        <!-- Main Navigation -->
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <div class="logo"><a href="#"><img src="images/logo.png" alt="">FLY++</a></div>
+                        </div>
+                        <div class="main_nav_container ml-auto">
+                            <ul class="main_nav_list">
+                                <li class="main_nav_item"><a href="index.html">home</a></li>
+                                <li class="main_nav_item"><a href="about.html">about us</a></li>
+                                <li class="main_nav_item"><a href="offers.html">offers</a></li>
+                                <li class="main_nav_item"><a href="blog.html">news</a></li>
+                                <li class="main_nav_item"><a href="contact.html">contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="content_search ml-lg-0 ml-auto">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <path class="mag_glass" fill="#FFFFFF" d="M78.438,216.78c0,57.906,22.55,112.343,63.493,153.287c40.945,40.944,95.383,63.494,153.287,63.494
+                                            s112.344-22.55,153.287-63.494C489.451,329.123,512,274.686,512,216.78c0-57.904-22.549-112.342-63.494-153.286
+                                            C407.563,22.549,353.124,0,295.219,0c-57.904,0-112.342,22.549-153.287,63.494C100.988,104.438,78.439,158.876,78.438,216.78z
+                                            M119.804,216.78c0-96.725,78.69-175.416,175.415-175.416s175.418,78.691,175.418,175.416
+                                            c0,96.725-78.691,175.416-175.416,175.416C198.495,392.195,119.804,313.505,119.804,216.78z"/>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path class="mag_glass" fill="#FFFFFF" d="M6.057,505.942c4.038,4.039,9.332,6.058,14.625,6.058s10.587-2.019,14.625-6.058L171.268,369.98
+                                            c8.076-8.076,8.076-21.172,0-29.248c-8.076-8.078-21.172-8.078-29.249,0L6.057,476.693
+                                            C-2.019,484.77-2.019,497.865,6.057,505.942z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <form id="search_form" class="search_form bez_1">
+                            <input type="search" class="search_content_input bez_1">
+                        </form>
+                        <div class="hamburger">
+                            <i class="fa fa-bars trans_200"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+    </header>
+
+    <!-- Hotel Listings -->
+    <div class="container">
+        <div class="row">
+            <!-- Hotel 1 -->
+            <div class="col-lg-12">
+                <div class="single_listing">
+                    <div class="hotel_info">
+                        <div class="hotel_title_container d-flex flex-lg-row flex-column">
+                            <div class="hotel_title_content"><br><br><br><br><br><br><br><br>
+                                <h1 class="hotel_title">Grand Hotel Eurostar</h1>
+                                <div class="rating_r rating_r_4 hotel_rating">
+                                    <i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="hotel_location">345 677 Gran Via Street, no 34, Madrid, Spain</div>
+								<img src="hotel-logo1.png" class="image">
+                            </div>
+                            <div class="hotel_title_button ml-lg-auto text-lg-right"><br><br><br><br><br><br><br><br>
+                                <div class="button book_button trans_200"><a href="#"><a href="bookings.html">book</a><span></span><span></span><span></span></a></div>
+                                <div class="hotel_map_link_container">
+                                    <div class="hotel_map_link">see on the map</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel_description">
+                            <div class="hotel_description_title">description</div>
+                            <p class="hotel_description_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam.</p>
+                        </div>
+                        <div class="hotel_amenities"><b>
+                            <div class="hotel_description_title">amenities</div></b>
+                            <div class="hotel_amenities_list d-flex flex-wrap">
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_1.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Free WiFi</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_2.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Swimming Pool</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_3.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Airport Shuttle</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_4.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Fitness Center</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel 2 -->
+            <div class="col-lg-12">
+                <div class="single_listing">
+                    <div class="hotel_info">
+                        <div class="hotel_title_container d-flex flex-lg-row flex-column">
+                            <div class="hotel_title_content">
+                                <h1 class="hotel_title">Hotel Paradise</h1>
+                                <div class="rating_r rating_r_5 hotel_rating">
+                                    <i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="hotel_location">123 Beach Avenue, Honolulu, Hawaii</div>
+								<img src="hotel-logo2.png" class="image">
+                            </div>
+                            <div class="hotel_title_button ml-lg-auto text-lg-right">
+                                <div class="button book_button trans_200"><a href="#">book <span></span><span></span><span></span></a></div>
+                                <div class="hotel_map_link_container">
+                                    <div class="hotel_map_link">see on the map</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel_description">
+                            <div class="hotel_description_title">description</div>
+                            <p class="hotel_description_text">Suspendisse potenti. Vestibulum sed lacus sit amet lacus auctor elementum. Sed vitae metus ac justo gravida faucibus. Ut imperdiet porttitor tortor, non consequat dui interdum ac. Phasellus eu urna vel justo euismod porttitor non ac massa. Morbi eu turpis eget eros elementum luctus. Integer ac neque sit amet arcu feugiat fermentum.</p>
+                        </div>
+                        <div class="hotel_amenities">
+                            <div class="hotel_description_title"><b>amenities</b></div>
+                            <div class="hotel_amenities_list d-flex flex-wrap">
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_5.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Free Breakfast</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_6.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Spa & Wellness Center</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_2.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Swimming Pool</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel 3 -->
+            <div class="col-lg-12">
+                <div class="single_listing">
+                    <div class="hotel_info">
+                        <div class="hotel_title_container d-flex flex-lg-row flex-column">
+                            <div class="hotel_title_content">
+                                <h1 class="hotel_title">Mountain View Resort</h1>
+                                <div class="rating_r rating_r_4 hotel_rating">
+                                    <i></i><i></i><i></i><i></i><i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="hotel_location">789 Green Valley Road, Aspen, Colorado</div>
+								<img src="hotel-logo1.png" class="image">
+                            </div>
+                            <div class="hotel_title_button ml-lg-auto text-lg-right">
+                                <div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+                                <div class="hotel_map_link_container">
+                                    <div class="hotel_map_link">see on the map</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel_description">
+                            <div class="hotel_description_title">description</div>
+                            <p class="hotel_description_text">Duis vel velit in justo pretium laoreet. Proin eu augue ac velit sagittis dignissim. Ut id ex elit. Donec ut purus a libero ullamcorper tincidunt nec sit amet risus. Praesent lobortis, arcu a ultrices feugiat, nunc magna fermentum metus, et aliquam diam lectus quis turpis.</p>
+                        </div>
+                        <div class="hotel_amenities">
+                            <div class="hotel_description_title"><b>amenities</b></div>
+                            <div class="hotel_amenities_list d-flex flex-wrap">
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_3.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Spa & Wellness Center</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_7.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Mountain View</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel 4 -->
+            <div class="col-lg-12">
+                <div class="single_listing">
+                    <div class="hotel_info">
+                        <div class="hotel_title_container d-flex flex-lg-row flex-column">
+                            <div class="hotel_title_content">
+                                <h1 class="hotel_title">Seaside Resort & Spa</h1>
+                                <div class="rating_r rating_r_5 hotel_rating">
+                                    <i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="hotel_location">456 Ocean Drive, Miami Beach, Florida</div>
+								<img src="hotel-logo2.png" class="image">
+                            </div>
+                            <div class="hotel_title_button ml-lg-auto text-lg-right">
+                                <div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+                                <div class="hotel_map_link_container">
+                                    <div class="hotel_map_link">see on the map</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel_description">
+                            <div class="hotel_description_title">description</div>
+                            <p class="hotel_description_text">Vestibulum scelerisque justo vel neque sagittis, vel pellentesque nisl posuere. Aliquam eleifend ex eu nisl dignissim consequat. In semper sem id erat cursus, vel lobortis justo volutpat. Proin eu tincidunt ex. Etiam ac augue in nisl efficitur malesuada. Vivamus euismod mi sed consequat suscipit.</p>
+                        </div>
+                        <div class="hotel_amenities">
+                            <div class="hotel_description_title"><b>amenities</b></div>
+                            <div class="hotel_amenities_list d-flex flex-wrap">
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_2.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Swimming Pool</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_8.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Private Beach</div>
+                                </div>
+                                <div class="hotel_amenity">
+                                    <div class="hotel_amenity_icon"><img src="images/amenities_9.png" alt=""></div>
+                                    <div class="hotel_amenity_text">Restaurant</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer_content">
+                        <!-- Footer Content - Omitted for brevity -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/progressbar/progressbar.min.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="js/single_listing_custom.js"></script>
+</body>
+</html>

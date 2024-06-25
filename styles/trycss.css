@@ -1,0 +1,211 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0d568a, #4674ba, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.search-box {
+    background: white;
+    padding: 30px; /* Increased padding for larger size */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 60px); /* Adjusted width to leave space for padding */
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin-bottom: 20px;
+    display: flex; /* Ensure flexbox is used */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Spread items horizontally */
+}
+
+.search-content {
+    display: flex;
+    gap: 20px; /* Increased gap between items */
+    align-items: center; /* Center items vertically */
+    flex: 1; /* Allow search content to grow */
+}
+
+.search-content > div {
+    flex: 1 1 auto; /* Allow items to grow */
+}
+
+.filters-flights-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px; /* Increased max-width for larger screens */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.filters, .flights {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.filters
+{
+    flex:1 1 20%;
+}
+.flights
+{
+    flex:1 1 80%;
+}
+
+h3, h2 {
+    margin-top: 0;
+}
+
+.flight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.flight:last-child {
+    border-bottom: none;
+}
+
+.flight-info {
+    flex: 1;
+    color: #333; /* Font color for flight details */
+}
+
+.flight-info p {
+    margin: 5px 0;
+}
+
+.flight-logo img {
+    max-width: 100px; /* Adjusted max-width for better image scaling */
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+input[type="text"], input[type="date"], select {
+    width: 100%; /* Adjusted width for full-width responsiveness */
+    padding: 15px; /* Increased padding for input elements */
+    margin-bottom: 15px; /* Increased margin bottom for input elements */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #007bff;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 10px;
+}
+
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.filter-item label {
+    flex: 1;
+}
+
+.filter-item span {
+    white-space: nowrap;
+}
+/* Add to Cart button styles */
+.book-now-button {
+    background-image: linear-gradient(
+        to right,
+        #54b3d6,
+        #54b3d6 50%,
+        #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none; /* Ensures no underline by default */
+    color: #fff; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    transition: all 0.3s ease-in-out;
+}
+
+.book-now-button:before {
+    content: '';
+    background: #54b3d6; /* Color of underline */
+    display: block;
+    position: absolute;
+    bottom: -3px; /* Position underline below text */
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 3px; /* Thickness of underline */
+    transition: all 0.3s ease-in-out;
+}
+
+.book-now-button{
+    margin:10px;
+}
+.book-now-button:hover {
+    background-position: 0; /* Slide gradient to the right on hover */
+}
+
+.book-now-button:hover::before {
+    width: 100%; /* Expand underline to full width on hover */
+}
+
+@media (max-width: 768px) {
+    .filters-flights-container {
+        flex-direction: column;
+    }
+
+    .filters, .flights {
+        flex: 1 1 100%;
+    }
+
+    .search-content {
+        flex-wrap: wrap;
+    }
+
+    .search-content > div {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        margin-bottom: 10px; /* Space between items */
+    }
+
+    /* Adjusting space between flight details and logo */
+    .flight-details {
+        margin-bottom: 10px; /* Adjust as needed */
+    }
+
+    /* Moving the modify button to the end of the search bar */
+    .modify-button {
+        order: 1; /* Ensure it appears after other elements */
+        margin-left: auto; /* Moves it to the right edge */
+    }
+}

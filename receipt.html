@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Paid</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.icon img {
+    width: 90px;
+    height: 90px;
+}
+
+.invoice-paid h1 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    color: #4caf50;
+}
+
+.invoice-paid h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    color: #333;
+}
+
+.details-link {
+    color: #1a73e8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+
+.invoice-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #1558b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" id="capture">
+        <div class="invoice-paid">
+            <div class="icon">
+                <img src="bill.jpg" alt="Paid Icon">
+            </div>
+            <h1>Invoice paid</h1>
+            <h2>$10.00</h2>
+            <a href="#" class="details-link">View invoice and payment details</a>
+            <div class="invoice-details">
+                <p>Invoice number</p>
+                <p class="detail-value">C067E9E6-0001</p>
+                <p>Payment date</p>
+                <p class="detail-value">June 20, 2024</p>
+                <p>Payment method</p>
+                <p class="detail-value">Visa •••• 1395</p><br>
+            </div>
+            <div class="buttons">
+                <button class="btn" id="download-invoice">Download invoice</button>
+                <button class="btn" id="download-receipt">Download receipt</button>
+            </div>
+        </div>
+    </div>
+    <script>document.getElementById('download-invoice').addEventListener('click', function() {
+        downloadScreenshot('invoice');
+    });
+    
+    document.getElementById('download-receipt').addEventListener('click', function() {
+        downloadScreenshot('receipt');
+    });
+    
+    function downloadScreenshot(type) {
+        html2canvas(document.getElementById('capture')).then(canvas => {
+            let link = document.createElement('a');
+            link.download = `${type}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/hotels_css.css">
+    <title>Booking Platform</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <div class="search-content">
+                <div class="input-group location">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter city or hotel name">
+                </div>
+                <div class="input-group dates">
+                    <label for="check-in">Check-in</label>
+                    <input type="date" id="check-in"><br>
+                    <label for="check-out">Check-out</label>
+                    <input type="date" id="check-out">
+                </div>
+                <div class="input-group guests">
+                    <label for="guests">Guests & Rooms</label>
+                    <input type="text" id="guests" placeholder="1 Adult, 1 Room">
+                </div>
+            </div>
+            <button id="search-button">Search</button>
+        </div>
+
+        <div class="filters-flights-container">
+            <div class="filters">
+                <h3>Hotel Filters</h3>
+                <div class="filter-item">
+                    <input type="checkbox" id="free-cancellation"><label for="free-cancellation">Free Cancellation</label><span>Free</span>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="breakfast-included"><label for="breakfast-included">Breakfast Included</label><span>₹500</span>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="parking"><label for="parking">Parking</label><span>₹200</span>
+                </div>
+                <h3>Price Range</h3>
+                <input type="range" min="1000" max="10000" value="1000" id="hotel-price-range"><br>
+                <h3>Rating</h3>
+                <div class="filter-item">
+                    <input type="checkbox" id="5-star"><label for="5-star">5 Star</label><span>₹7,500</span>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="4-star"><label for="4-star">4 Star</label><span>₹5,000</span>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="3-star"><label for="3-star">3 Star</label><span>₹4,500</span>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="2-star"><label for="2-star">2 Star</label><span>₹2,000</span>
+                </div>
+            </div>
+
+            <div class="hotels">
+                <h2>Hotels in Pune</h2>
+                <div class="hotel">
+                    <div class="item-info">
+                        <p>Hotel ABC</p>
+                        <p>Price: ₹2,500 per night</p>
+                        <p>Rating: 4.5/5</p>
+                    </div>
+                    <span class="item-logo"><img src="hotel-logo1.png" alt="Hotel Logo"></span><a href="bookings.html">
+                    <button class="book-button">Book Now</button></a>
+                </div>
+                <div class="hotel">
+                    <div class="item-info">
+                        <p>Hotel XYZ</p>
+                        <p>Price: ₹3,000 per night</p>
+                        <p>Rating: 4.2/5</p>
+                    </div>
+                    <span class="item-logo"><img src="hotel-logo2.png" alt="Hotel Logo"></span>
+                    <button class="book-button">Book Now</button>
+                </div>
+                <div class="hotel">
+                    <div class="item-info">
+                        <p>Hotel MNO</p>
+                        <p>Price: ₹4,500 per night</p>
+                        <p>Rating: 4.8/5</p>
+                    </div>
+                    <span class="item-logo"><img src="hotel-logo1.png" alt="Hotel Logo"></span>
+                    <button class="book-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('search-button').addEventListener('click', function() {
+            alert('Search button clicked!');
+        });
+    </script>
+</body>
+</html>

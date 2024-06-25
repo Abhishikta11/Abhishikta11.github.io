@@ -1,0 +1,239 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background : linear-gradient(to right, #0d568a, #4674ba,#ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header .tabs {
+            display: flex;
+        }
+
+        .header .tabs div {
+            margin-right: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .header .tabs div:hover {
+            color: #007bff;
+        }
+
+        .price-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .price-button span {
+            font-size: 18px;
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .filters button {
+            margin-right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .filters button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .room-offer {
+            display: flex;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .room-offer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .room-details, .benefits, .price-book {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .room-details img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .room-info {
+            margin-top: 10px;
+        }
+
+        .benefits {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+
+        .price-book {
+            text-align: center;
+        }
+
+        .price-book .price {
+            color: red;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .book-now {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .book-now:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .book-now:focus {
+            outline: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .room-offer {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        
+        /* Add to Cart button styles */
+.book-now {
+    background-image: linear-gradient(
+        to right,
+        #54b3d6,
+        #54b3d6 50%,
+        #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none; /* Ensures no underline by default */
+    color: #fff; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    transition: all 0.3s ease-in-out;
+}
+
+.book-now:before {
+    content: '';
+    background: #54b3d6; /* Color of underline */
+    display: block;
+    position: absolute;
+    bottom: -3px; /* Position underline below text */
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 3px; /* Thickness of underline */
+    transition: all 0.3s ease-in-out;
+}
+
+.book-now:hover {
+    background-position: 0; /* Slide gradient to the right on hover */
+}
+
+.book-now:hover::before {
+    width: 100%; /* Expand underline to full width on hover */
+}
+
+/* Media query for screens up to 768px */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .filters button {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin */
+        width: 100%; /* Full width for buttons */
+    }
+
+    .room-offer {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .room-details img {
+        width: 100%; /* Full width for images */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+
+    .benefits {
+        border: none; /* Remove borders */
+        padding: 10px 0; /* Adjust padding */
+        margin-top: 10px; /* Add top margin */
+    }
+
+    .price-book {
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .price-book .price {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .book-now {
+        width: 100%; /* Full width for button */
+        padding: 12px; /* Adjust padding */
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
